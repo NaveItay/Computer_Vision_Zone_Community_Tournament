@@ -1,2 +1,10 @@
 # Computer Vision Zone Community Tournament
-Counts and tracks the number of cars by drone passing over a junkyard. (Computer Vision and Deep Learning)
+
+Computer vision tournament within the CVZone community.
+
+Tournament name: 'Drone Surveillance Contest'.
+Tournament task:  to count and track the number of cars by drone passing over a junkyard.
+
+
+
+
