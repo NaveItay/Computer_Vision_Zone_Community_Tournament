@@ -1,4 +1,10 @@
 # Computer Vision Zone Community Tournament
+
+<p>
+<br />
+<br />
+</p>
+
 ### Computer Vision Tournament - [CVZone](https://www.computervision.zone/) community.
 
 ![title](/github_images/labelimg.png)
