@@ -30,23 +30,18 @@
 ###### Image data
 >
 > 
-> ##### Split the video into frames
+> ##### 1. Split the video into frames
 >
-> ##### Add new images data to prevent overfitting and achieve versatile performance
+> ##### 2. Add new images data to prevent overfitting and achieve versatile performance
 >
-> ##### Perform augmentation to achieve the optimum result for a dynamic environment
+> ##### 3. Perform augmentation to achieve the optimum result for a dynamic environment
 >
->
+> ##### 4. Data labeling 
+> 
 
 <p>
 <br />
 </p>
-
-###### Data labeling
->
->
->
->
 
 ###### Training CNN model (YOLO Algorithm)
 >
