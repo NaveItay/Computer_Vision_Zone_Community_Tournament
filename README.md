@@ -9,7 +9,6 @@
 
 <p>
 <br />
-<br />
 </p>
 
 ### Project steps:
