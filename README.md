@@ -16,9 +16,9 @@
 ### Project steps:
 
 1. Image data
-   - Split the video into frames.
-   - Add new images data to prevent overfitting and achieve versatile performance.
-   - Perform augmentation to achieve the optimum result for a dynamic environment.
+   - Split the video into frames
+   - Add new images data to prevent overfitting and achieve versatile performance
+   - Perform augmentation to achieve the optimum result for a dynamic environment
 2. Data labeling
 3. Training CNN model (YOLO Algorithm)
 4. Code                
