@@ -1,10 +1,5 @@
 # Drone Surveillance Contest
 
-<p>
-<br />
-<br />
-</p>
-
 ### Computer Vision Tournament - [CVZone](https://www.computervision.zone/) community.
 
 ![title](/github_images/labelimg.png)
@@ -12,7 +7,11 @@
 * Tournament name:  'Drone Surveillance Contest'.
 * Tournament task:   to count and track the number of cars by drone passing over a junkyard.
 
-#
+<p>
+<br />
+<br />
+</p>
+
 ### Project steps:
 
 1. Image data
@@ -27,4 +26,6 @@
    - Draw Detections
    - Objects Tracking and Counting
   
+  
+#
 
