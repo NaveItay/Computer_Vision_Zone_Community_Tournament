@@ -14,10 +14,10 @@
 ### Project steps:
 
 * Create an image dataset
-   - Split the video into frames
-   - Add new images data to prevent overfitting and achieve versatile performance
-   - Perform augmentation to achieve the optimum result for a dynamic environment
-   - Data labeling 
+   1. Split the video into frames
+   2. Add new images data to prevent overfitting and achieve versatile performance
+   3. Perform augmentation to achieve the optimum result for a dynamic environment
+   4. Data labeling 
 * Training CNN model (YOLO Algorithm)
 * Code                
    - Initialize Model
