@@ -27,7 +27,7 @@
   
   
 #
-###### Image data
+###### Create an image dataset
 >
 > 
 > ##### 1. Split the video into frames
