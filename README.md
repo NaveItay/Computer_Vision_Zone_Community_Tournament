@@ -90,32 +90,6 @@
 >   
 >   
 >  ```
->  
->  ##### Object Tracking Camera
->  ```
->   
->
->   
->
->   
->   
->
->   
->   
->   
->   
->   
->   
->   
->
->   
->   
->   
->   
->   
->   
->   
->  ```
 >
 >  ##### Objects Tracking and Counting
 >  ```
