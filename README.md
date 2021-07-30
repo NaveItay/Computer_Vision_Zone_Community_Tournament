@@ -1,4 +1,4 @@
-# Computer Vision Zone Community Tournament
+# Drone Surveillance Contest
 
 <p>
 <br />
