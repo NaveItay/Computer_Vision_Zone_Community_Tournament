@@ -32,6 +32,7 @@
 >
 > 
 > ##### 1. Split the video into frames
+> ![title](/github_images/split_video.PNG)
 >
 > ##### 2. Add new images data to prevent overfitting and achieve versatile performance
 >
