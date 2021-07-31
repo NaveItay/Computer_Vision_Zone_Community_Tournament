@@ -3,6 +3,7 @@
 ### Computer Vision Tournament - [CVZone](https://www.computervision.zone/) community.
 
 ![title](/github_images/labelimg.png)
+[![title](/github_images/youtube.png "ChameleonVISION - video assistant referee system for beach volleyball games")](https://www.youtube.com/watch?v=UwBT0xUOck4&ab_channel=ItayNave)
 
 * Tournament name:  'Drone Surveillance Contest'.
 * Tournament task:   to count and track the number of cars by drone passing over a junkyard.
