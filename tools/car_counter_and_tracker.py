@@ -7,7 +7,7 @@ class CarCountAndTrack:
 
     # region of interest
     up_threshold = 250
-    down_threshold = 265    # 265
+    down_threshold = 265
     blank_image = np.zeros((1080, 1920, 3), np.uint8)
     cv2.rectangle(blank_image, (0, up_threshold), (1920, down_threshold), (255, 255, 255), -1)
 
