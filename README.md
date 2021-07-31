@@ -22,8 +22,8 @@
 * Code                
    - Initialize Model
    - Cars Detection
-   - Draw Detections
-   - Objects Tracking and Counting
+   - Count and track cars that are only in the region of interest.
+   - Draw result
   
   
 #
@@ -66,7 +66,7 @@
 >          
 >  ```
 >
->  ##### Draw Detections
+>  ##### Count and track cars that are only in the region of interest!
 >  ```
 >   
 >
@@ -86,7 +86,7 @@
 >   
 >  ```
 >
->  ##### Objects Tracking and Counting
+>  ##### Draw result
 >  ```
 >      
 >
