@@ -26,7 +26,7 @@
    - Count and track cars that are only in the region of interest.
    - Draw result
 
-Video processing by CUDA technology support, NVIDIA® GeForce® graphic card.
+** Video processing by CUDA technology support, NVIDIA® GeForce® graphic card.
   
 #
 ###### Create an image dataset
