@@ -1,6 +1,6 @@
 import cv2
 
-CONFIDENCE_THRESHOLD = 0.65
+CONFIDENCE_THRESHOLD = 0.2
 NMS_THRESHOLD = 0.1
 COLORS = [(255, 0, 0), (0, 0, 255), (195, 195, 195), (0, 255, 0), (0, 0, 0), (255, 255, 255)]
 
@@ -8,6 +8,8 @@ COLORS = [(255, 0, 0), (0, 0, 255), (195, 195, 195), (0, 255, 0), (0, 0, 0), (25
 class ObjectDetection:
     classes = []
     class_names = []
+    scores = []
+    boxes = []
     model = None
 
     def initialize_model(self):
@@ -15,7 +17,7 @@ class ObjectDetection:
         with open('./model/coco.names', 'r') as f:
             self.class_names = [cname.strip() for cname in f.readlines()]
 
-        net = cv2.dnn.readNet('./model/yolov3.weights', './model/yolov3.cfg')
+        net = cv2.dnn.readNet('./model/Drone_Surveillance_Contest.weights', './model/Drone_Surveillance_Contest.cfg')
         net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
         net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
         self.model = cv2.dnn_DetectionModel(net)
@@ -23,6 +25,10 @@ class ObjectDetection:
 
     def detect(self, frame):
         self.classes, scores, boxes = self.model.detect(frame, CONFIDENCE_THRESHOLD, NMS_THRESHOLD)
+
+        # Draw all cars
+        self.draw_all(frame, boxes)
+
         return self.classes, scores, boxes
 
     def draw_objects(self, frame, classes, scores, boxes):
@@ -37,7 +43,7 @@ class ObjectDetection:
             # label = "(%d, %d)" % (x, y)
             overlay = frame.copy()
 
-            if class_id[0] == 67:
+            if class_id[0] == 0:
                 # cv2.putText(frame, label + " " + str(score), (box[0], box[1] - 10),
                 #             cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[4], 2)
                 # cv2.putText(frame, str(self.class_names[int(class_id)]), (x, y),
@@ -58,3 +64,11 @@ class ObjectDetection:
         cx = x + w // 2
         cy = y + h // 2
         return cx, cy
+
+    def draw_all(self, frame, boxes):
+        overlay = frame.copy()
+
+        for box in boxes:
+            x, y, w, h = box
+            cv2.addWeighted(overlay, 0.5, frame, 0.5, 0, frame)
+            cv2.rectangle(overlay, (x, y), (x + w, y + h), COLORS[5], 2)
