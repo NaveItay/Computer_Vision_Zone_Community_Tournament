@@ -3,7 +3,7 @@
 ### Computer Vision Tournament - [CVZone](https://www.computervision.zone/) community.
 
 ![title](/github_images/Result.PNG)
-[![title](/github_images/youtube.png "Computer Vision Zone Community Tournament - "Drone Surveillance Contest" - Count and track the number of cars by drone passing over a junkyard")](https://youtu.be/_s2noEVmjcI)
+[![title](/github_images/youtube.png "Computer Vision Zone Community Tournament - Drone Surveillance Contest - Count and track the number of cars by drone passing over a junkyard")](https://youtu.be/_s2noEVmjcI)
 
 * Tournament name:  'Drone Surveillance Contest'.
 * Tournament task:   to count and track the number of cars by drone passing over a junkyard.
