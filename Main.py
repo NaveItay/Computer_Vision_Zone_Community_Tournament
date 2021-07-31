@@ -12,8 +12,14 @@ video_path = "Video/DRONE-SURVEILLANCE-CONTEST-VIDEO.mp4"
 
 cap = cv2.VideoCapture(video_path)
 
+# Video out
+width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = int(cap.get(cv2.CAP_PROP_FPS))
+out = cv2.VideoWriter('outpy.avi', cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'), fps, (width, height))
+
 while cap.isOpened():
-    
+
     _, current_frame = cap.read()
 
     # Cars Detection
@@ -25,9 +31,13 @@ while cap.isOpened():
     # Draw result
     current_frame = o_detection.draw_objects(current_frame, classes, scores, objects_bbs_ids)
 
+    # Write the frame into the file 'output.avi'
+    out.write(current_frame)
+
     cv2.imshow("Image", current_frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(10) & 0xFF == ord('q'):
         break
 
-# shut down capture system
+# When everything done, release the video capture and video write objects
 cap.release()
+out.release()
