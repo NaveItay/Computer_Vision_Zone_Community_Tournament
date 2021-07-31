@@ -18,7 +18,7 @@
   2. Add new images data to prevent overfitting and achieve versatile performance
   3. Perform augmentation to achieve the optimum result for a dynamic environment
   4. Data labeling 
-* Training CNN model (YOLO Algorithm)
+* Training custom CNN model (YOLO Algorithm)
 * Code                
    - Initialize Model
    - Cars Detection
@@ -43,7 +43,7 @@
 <br />
 </p>
 
-###### Training CNN model (YOLO Algorithm)
+###### Training custom CNN model (YOLO Algorithm)
 >
 >
 >
@@ -100,3 +100,18 @@
 >      
 > ```
 > 
+
+<p>
+<br />
+</p>
+
+### References
+>
+> - [Pysource](https://pysource.com/).
+>
+> - [CV Zone](https://www.computervision.zone/).
+>
+> - [Augmented Startups](https://www.augmentedstartups.com/).
+>
+> - [Roboflow](https://roboflow.com/).
+>
