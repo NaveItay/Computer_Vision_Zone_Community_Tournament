@@ -12,7 +12,7 @@ parser.add_argument('--out', help='Full path to vidos dir.', default='')
 args = parser.parse_args()
 
 # Saves every save_count frame 
-save_count = 5    # save every 4 secs, 30fps vid
+save_count = 5    # save img every 5 frames
 
 # Start names from '10000.jpg'
 image_name = 10000
