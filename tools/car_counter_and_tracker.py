@@ -1,8 +1,15 @@
 import math
 import cv2
+import numpy as np
 
 
 class CarCountAndTrack:
+
+    # region of interest
+    up_threshold = 160
+    down_threshold = 460
+    blank_image = np.zeros((1080, 1920, 3), np.uint8)
+    cv2.rectangle(blank_image, (0, up_threshold), (1920, down_threshold), (255, 255, 255), -1)
 
     def __init__(self):
         # Store the center positions of the objects
@@ -11,11 +18,29 @@ class CarCountAndTrack:
         # each time a new object id detected, the count will increase by one
         self.id_count = 1
 
-    def get_box_center(self, box):
-        x, y, w, h = box
-        cx = x + w // 2
-        cy = y + h // 2
-        return cx, cy
+    def region_of_interest(self, current_frame, detection_boxes):
+        cv2.addWeighted(current_frame, 0.7, self.blank_image, 0.3, 0, current_frame)
+        cars_in_roi = []
+        # Count cars that are only in the region of interest!
+        for box in detection_boxes:
+            _, y, _, _ = box
+            if self.up_threshold < y < self.down_threshold:
+                cars_in_roi.append(box)
+
+        # Track and count
+        objects_bbs_ids = self.update(cars_in_roi)
+
+        # Draw cars amount and my name
+        self.draw_title(current_frame)
+
+        return objects_bbs_ids
+
+    def draw_title(self, current_frame):
+
+        cv2.putText(current_frame, str(self.id_count), (1750, 90),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 0, 0), 2)
+        cv2.putText(current_frame, "Itay Nave", (915, 90),
+                    cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 0), 3)
 
     def update(self, objects_rect):
         # Objects boxes and ids
@@ -32,7 +57,7 @@ class CarCountAndTrack:
             for id, pt in self.center_points.items():
                 dist = math.hypot(cx - pt[0], cy - pt[1])
 
-                if dist < 25:
+                if dist < 50:
                     self.center_points[id] = (cx, cy)
 
                     objects_bbs_ids.append([x, y, w, h, id])

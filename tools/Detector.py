@@ -2,7 +2,7 @@ import cv2
 
 CONFIDENCE_THRESHOLD = 0.65
 NMS_THRESHOLD = 0.1
-COLORS = [(255, 0, 0), (0, 0, 255), (195, 195, 195), (0, 255, 0), (0, 0, 0)]
+COLORS = [(255, 0, 0), (0, 0, 255), (195, 195, 195), (0, 255, 0), (0, 0, 0), (255, 255, 255)]
 
 
 class ObjectDetection:
@@ -34,18 +34,22 @@ class ObjectDetection:
 
             xx, yy, w, h, index = box
 
-            label = "(%d, %d)" % (x, y)
+            # label = "(%d, %d)" % (x, y)
             overlay = frame.copy()
 
-            # Draw Balloon
             if class_id[0] == 67:
+                # cv2.putText(frame, label + " " + str(score), (box[0], box[1] - 10),
+                #             cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[4], 2)
+                # cv2.putText(frame, str(self.class_names[int(class_id)]), (x, y),
+                #             cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[1], 2)
+                cv2.rectangle(overlay, (x - w//2, y), (xx + w, yy + h), COLORS[5], -1)
+
+                # Car bounding box
                 cv2.rectangle(overlay, (xx, yy), (xx + w, yy + h), COLORS[1], 2)
                 cv2.addWeighted(overlay, 0.5, frame, 0.5, 0, frame)
-                cv2.putText(frame, label + " " + str(score), (box[0], box[1] - 10),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[4], 2)
-                cv2.putText(frame, str(self.class_names[int(class_id)]), (x, y),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[1], 2)
-                cv2.putText(frame, f'ID: {index}', (x - 40, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[4], 2)
+
+                # Car number
+                cv2.putText(frame, f'  {index}', (xx, int(yy + h*0.8)), cv2.FONT_HERSHEY_SIMPLEX, 1, COLORS[4], 2)
 
         return frame
 
