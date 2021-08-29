@@ -1,5 +1,7 @@
 # Drone Surveillance Contest
 
+### Contest winner certificate ![title](/github_images/CVZone_certificate_Itay_Nave.png)
+
 ### Computer Vision Tournament - [CVZone](https://www.computervision.zone/) community.
 
 ![title](/github_images/Result.PNG)
